@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Manabi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manabs.each do |manab| %>
+      <tr>
+        <td><%= manab.title %></td>
+        <td><%= manab.manabi %></td>
+        <td><%= link_to 'Show', manab %></td>
+        <td><%= link_to 'Edit', edit_manab_path(manab) %></td>
+        <td><%= link_to 'Destroy', manab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manab', new_manab_path %>

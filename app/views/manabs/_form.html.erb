@@ -1,0 +1,27 @@
+<%= form_for(manab) do |f| %>
+  <% if manab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manab.errors.count, "error") %> prohibited this manab from being saved:</h2>
+
+      <ul>
+      <% manab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manabi %>
+    <%= f.text_field :manabi %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
